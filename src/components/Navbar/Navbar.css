@@ -1,0 +1,17 @@
+.nav-bar{
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 0;
+    padding: .5rem 1rem;
+    height: 3rem;
+}
+
+.nav-bar img{
+    width: 10rem;
+}
+
+.nav-search{
+    width: 60%;
+}

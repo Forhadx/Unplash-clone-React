@@ -1,0 +1,15 @@
+
+.img-gallary {
+    columns: 3 20rem;
+    column-gap: 1.5rem;
+    width: 70%;
+    margin: 0 auto;
+}
+.img-gallary img {
+      width: 150px;
+      margin: 0 1.5rem 1.5rem 0;
+      display: inline-block;
+      width: 100%;
+      padding: 5px;
+
+}

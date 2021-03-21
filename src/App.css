@@ -1,0 +1,18 @@
+.App {
+  text-align: center;
+}
+
+.App-header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 7.5rem;
+  background-color: white;
+  z-index: 100;
+}
+
+.App-main{
+  padding-top: 10rem;
+  border: 1px solid black;
+}

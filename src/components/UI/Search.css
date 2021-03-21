@@ -1,0 +1,18 @@
+.search-div{
+    width: 100%;
+}
+.search{
+    width: 100%;
+    padding: .5rem 1rem;
+    border-radius: 1.5rem;
+    margin-left: 1rem;
+    font-size: 1.1rem;
+    background-color: rgb(235, 232, 232);
+    border: 1px solid rgb(235, 232, 232);
+}
+.search:focus{
+    outline: none;
+}
+.search:hover{
+    border: 1px solid rgb(214, 212, 212);
+}
