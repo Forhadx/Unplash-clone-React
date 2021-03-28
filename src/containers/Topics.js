@@ -6,7 +6,7 @@ import Gallary from '../components/gallary/gallary';
 
 const Topic = (props) => {
 
-  console.log(props.match.params.slug);
+ // console.log(props.match.params.slug);
 
   let slug_name = props.match.params.slug;
   const { onFetchSingleTopics,onFetchSingleTopicsPhotos } = props;
@@ -16,7 +16,7 @@ const Topic = (props) => {
     onFetchSingleTopicsPhotos(slug_name);
   }, [onFetchSingleTopics, onFetchSingleTopicsPhotos, slug_name]);
 
-  console.log("single: ", props.singleTopicPhotos);
+  //console.log("single: ", props.singleTopicPhotos);
   return (
     <div>
       {props.singleTopic ? (

@@ -8,3 +8,9 @@ export {
 export {
     fetchPaginationPhotos
 } from './Pagination'
+
+export {
+    userProfile,
+    userPhotos,
+    userLikedPhotos
+} from './User';

@@ -12,7 +12,7 @@ const Editorial = props => {
     onFetchAllTopics();
   }, [onFetchAllTopics])
 
-  console.log('val: ', props.topics)
+ // console.log('val: ', props.topics)
 
   return (
     <nav>

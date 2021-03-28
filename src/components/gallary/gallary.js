@@ -11,7 +11,6 @@ const Gallary = (props) => {
           <img src={p.urls.regular} alt={p.alt_description} />
           <div>
             <Link to={"/@" + p.user.username}>
-              {" "}
               <h3>{p.user.username}</h3>{" "}
             </Link>
             <img

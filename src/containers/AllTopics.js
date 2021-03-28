@@ -9,7 +9,7 @@ const AllTopics = (props) => {
     onFetchAllTopics();
   }, [onFetchAllTopics]);
 
-  console.log("view: ", props.topics);
+ // console.log("view: ", props.topics);
 
   return (
     <div>

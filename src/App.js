@@ -22,6 +22,7 @@ const App = () => {
         <Switch>
           <Route path="/t" exact component={AllTopics} />
           <Route path="/t/:slug" exact component={Topics} />
+          <Route path="/:user/likes" />
           <Route path="/:user" exact component={User} />
           <Route path="/" exact component={Home} />
         </Switch>

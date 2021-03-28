@@ -11,10 +11,12 @@ import App from "./App";
 
 import topicsReducer from './store/reducers/Topics';
 import paginationReducer from './store/reducers/Pagination';
+import userReducer from './store/reducers/User';
 
 const rootReducer = combineReducers({
   topics: topicsReducer,
-  pagination: paginationReducer
+  pagination: paginationReducer,
+  user: userReducer
 });
 
 const logger = (store) => {
