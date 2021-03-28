@@ -1,7 +1,9 @@
 import * as actionsTypes from '../actions/actionTypes';
 
 const initialState = {
-    topics: []
+    topics: [],
+    singleTopic: null,
+    singleTopicPhotos: []
 }
 
 const reducer  = ( state=initialState, action ) => {
@@ -10,6 +12,19 @@ const reducer  = ( state=initialState, action ) => {
             return{
                 ...state,
                 topics: action.data
+            }
+        case actionsTypes.FETCH_SINGLE_TOPICS:
+            return{
+                ...state,
+                singleTopic: {
+                    title: action.data.title,
+                    description: action.data.description
+                } 
+            }
+        case actionsTypes.FETCH_SINGLE_TOPICS_PHOTOS:
+            return{
+                ...state,
+                singleTopicPhotos: action.data
             }
         default:
             return state

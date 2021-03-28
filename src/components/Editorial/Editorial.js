@@ -21,11 +21,11 @@ const Editorial = props => {
         <ul className="editorial-items">
           {
             props.topics.map(t =>(
-              <li key={t.id} ><NavLink to={`/t/${t.id}/${t.title}`}> {t.title} </NavLink></li>
+              <li key={t.id} ><NavLink to={`/t/${t.slug}`}> {t.title} </NavLink></li>
             ))
           }
         </ul>
-        <li className="view-all">view all</li>
+        <li className="view-all"><NavLink to='/t'>view all</NavLink></li>
       </ul>
     </nav>
   );

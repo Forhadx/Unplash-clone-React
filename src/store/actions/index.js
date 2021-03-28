@@ -1,6 +1,8 @@
 
 export {
-    fetchAllTopics
+    fetchAllTopics,
+    fetchSingleTopics,
+    fetchSingleTopicsPhotos
 } from './Topics';
 
 export {
