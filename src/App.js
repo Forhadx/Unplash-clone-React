@@ -9,7 +9,8 @@ import Navbar from "./components/Navbar/Navbar";
 import Home from "./containers/home";
 import Topics from "./containers/Topics";
 import AllTopics from "./containers/AllTopics";
-import User from './containers/User';
+import User from "./containers/User";
+import Search from './containers/Search';
 
 const App = () => {
   return (
@@ -20,10 +21,10 @@ const App = () => {
       </header>
       <main className="App-main">
         <Switch>
+          <Route path="/s/:type/:sName" exact component={Search} />
           <Route path="/t" exact component={AllTopics} />
           <Route path="/t/:slug" exact component={Topics} />
-          <Route path="/:user/likes" />
-          <Route path="/:user" exact component={User} />
+          <Route path="/:user" component={User} />
           <Route path="/" exact component={Home} />
         </Switch>
       </main>
@@ -32,3 +33,4 @@ const App = () => {
 };
 
 export default App;
+

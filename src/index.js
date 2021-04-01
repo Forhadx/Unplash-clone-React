@@ -12,11 +12,13 @@ import App from "./App";
 import topicsReducer from './store/reducers/Topics';
 import paginationReducer from './store/reducers/Pagination';
 import userReducer from './store/reducers/User';
+import searchReducer from './store/reducers/Search';
 
 const rootReducer = combineReducers({
   topics: topicsReducer,
   pagination: paginationReducer,
-  user: userReducer
+  user: userReducer,
+  search: searchReducer
 });
 
 const logger = (store) => {

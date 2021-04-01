@@ -3,7 +3,8 @@ import * as actionsTypes from '../actions/actionTypes';
 const initialState = {
     uProfile: null,
     uPhotos: [],
-    uLikesPhotos: []
+    uLikesPhotos: [],
+    uCollections: []
 }
 
 const reducer  = ( state=initialState, action ) => {
@@ -27,6 +28,11 @@ const reducer  = ( state=initialState, action ) => {
                 ...state,
                 uLikesPhotos: action.data
             }
+        case actionsTypes.USER_COLLECTION:
+                return{
+                    ...state,
+                    uCollections: action.data
+                }
         default:
             return state
     }

@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { withRouter } from "react-router";
+
 import './Search.css';
 
 
@@ -7,7 +9,8 @@ const Search = (props) => {
 
   const onSubmitHandler = (event) => {
     event.preventDefault();
-    props.onSubmitHandler(item);
+    ///console.log(item);
+    props.history.push('/s/photos/'+item)
     setItem("");
   };
   return (
@@ -25,4 +28,6 @@ const Search = (props) => {
   );
 };
 
-export default Search;
+
+
+export default withRouter(Search);

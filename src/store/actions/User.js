@@ -57,9 +57,31 @@ export const userLikedPhotos = (userName) => {
     uAxios
       .get(`/users/${userName}/likes`)
       .then((res) => {
-        console.log('Lphoto', res.data)
+        //console.log('Lphoto', res.data)
         let fetchData = [...res.data]
-          dispatch(userPhotosSuccess(fetchData))
+          dispatch(userLikedPhotosSuccess(fetchData))
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+};
+
+export const userCollectionsSuccess = (data) => {
+  return {
+    type: actionsTypes.USER_COLLECTION,
+    data: data,
+  };
+};
+
+export const userCollections = (userName) => {
+  return (dispatch) => {
+    uAxios
+      .get(`/users/${userName}/collections`)
+      .then((res) => {
+        //console.log('Lphoto', res.data)
+        let fetchData = [...res.data]
+          dispatch(userCollectionsSuccess(fetchData))
       })
       .catch((err) => {
         console.log(err);

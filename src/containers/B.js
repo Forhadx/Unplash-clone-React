@@ -1,11 +1,11 @@
 import React from 'react'
 
-const A = () =>{
+const B = () =>{
     return (
         <div>
-            A
+            b
         </div>
     )
 }
 
-export default A;
+export default B;
