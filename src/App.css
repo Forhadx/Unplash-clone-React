@@ -7,12 +7,12 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 7.5rem;
+  height: 6rem;
   background-color: white;
   z-index: 100;
+  box-shadow: 0 4px 2px -2px rgb(192, 191, 191);
 }
 
 .App-main{
-  padding-top: 10rem;
-  border: 1px solid black;
+  padding-top: 6rem;
 }

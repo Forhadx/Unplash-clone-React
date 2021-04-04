@@ -10,9 +10,9 @@ import {
 import * as actions from '../store/actions/index';
 
 import Gallary from '../components/gallary/gallary';
-import A from "./A";
-import B from "./B";
-import C from "./C";
+import Collections from '../components/Collection/Collections';
+import Users from '../components/Users/Users';
+import './style.css';
 
 const Search = (props) => {
   let { sName } = useParams();
@@ -29,17 +29,17 @@ const Search = (props) => {
 
   return (
     <div>
+      <ul className="user-links">
+        <li><NavLink to={`/s/photos/${sName}`}>Photos</NavLink></li>
+        <li><NavLink to={`/s/collections/${sName}`}>Collections</NavLink></li>
+        <li><NavLink to={`/s/Users/${sName}`}>Users</NavLink></li>
+      </ul>
       <div>
-        <NavLink to={`/s/photos/${sName}`}>Photos</NavLink>
-        <NavLink to={`/s/collections/${sName}`}>Collections</NavLink>
-        <NavLink to={`/s/Users/${sName}`}>Users</NavLink>
-      </div>
-      <div>
-        <h2>{sName}</h2>
+        <h1 className="search-name">{sName}</h1>
         <Switch>
           <Route path={`/s/photos/${sName}`} exact render={() => <Gallary photos={props.sPhotos} />} />
-          <Route path={`/s/collections/${sName}`} exact render={() => <B />} />
-          <Route path={`/s/Users/${sName}`} exact render={() => <C />} />
+          <Route path={`/s/collections/${sName}`} exact render={() => <Collections collections={props.sCollections} />} />
+          <Route path={`/s/Users/${sName}`} exact render={() => <Users users={props.sUsers} />} />
         </Switch>
       </div>
     </div>

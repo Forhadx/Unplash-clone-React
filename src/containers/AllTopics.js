@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import * as actions from "../store/actions/index";
+import './style.css';
 
 const AllTopics = (props) => {
   const { onFetchAllTopics } = props;
@@ -12,28 +13,24 @@ const AllTopics = (props) => {
  // console.log("view: ", props.topics);
 
   return (
-    <div>
-      <div>
+    <div className="all-topics"> 
+      <div className="topic-head">
         <h1>Topics</h1>
-        <p>
-          Explore the world through topics of beautiful photos free to use under
-          the
-        </p>
+        <span>Explore the world through topics of beautiful photos free to use under the</span>
       </div>
-      <div>
+      <div className="all-topics-details">
         <h2>All topics</h2>
         <ul>
           {props.topics.map((t) => (
-            <li key={t.id} style={{ border: "1px solid red", width: "50%" }}>
+            <li key={t.id} className="single-topic">
               <Link to={`/t/${t.slug}`}>
                 <img
                   src={t.cover_photo.urls.regular}
                   alt={t.cover_photo.description}
                   style={{ width: "100%" }}
                 />
-                <p>{t.status}</p>
-                <div>{t.title}</div>
-                <div>{t.description}</div>
+                <h4>{t.title}</h4>
+                <p>{t.description.slice(0, 80)}...</p>
               </Link>
             </li>
           ))}

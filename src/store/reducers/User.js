@@ -15,7 +15,7 @@ const reducer  = ( state=initialState, action ) => {
                 uProfile: {
                     name: action.data.name,
                     bio: action.data.bio,
-                    image: action.data.profile_image.medium
+                    image: action.data.profile_image.large
                 }
             }
         case actionsTypes.USER_PHOTOS:

@@ -13,16 +13,14 @@ const Gallary = (props) => {
             className={classes.picture}
           />
           <div className={classes.userDetails}>
-            <div className={classes.user}>
+            <Link to={"/@" + p.user.username} className={classes.user}>
               <img
                 src={p.user.profile_image.large}
                 alt={p.user.name}
                 className={classes.userImg}
               />
-              <Link to={"/@" + p.user.username} className={classes.userName}>
-                {p.user.name}
-              </Link>
-            </div>
+              <p className={classes.userName}>{p.user.name}</p>
+            </Link>
             <div className={classes.down}>Down</div>
           </div>
         </div>

@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import * as actions from "../store/actions/index";
 
 import Gallary from '../components/gallary/gallary';
+import './style.css';
 
 const Topic = (props) => {
 
