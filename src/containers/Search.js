@@ -10,7 +10,7 @@ import {
 import * as actions from '../store/actions/index';
 
 import Gallary from '../components/gallary/gallary';
-import Collections from '../components/Collection/Collections';
+import Collections from '../components/Collection/Collection';
 import Users from '../components/Users/Users';
 import './style.css';
 
@@ -50,7 +50,7 @@ const mapStateToProps = (state) => {
   return {
     sPhotos: state.search.sPhotos ,
     sUsers: state.search.sPhotos,
-    sCollections: state.search.sPhotos
+    sCollections: state.search.sCollections
   };
 };
 

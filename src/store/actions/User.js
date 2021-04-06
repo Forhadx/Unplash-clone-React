@@ -75,11 +75,12 @@ export const userCollectionsSuccess = (data) => {
 };
 
 export const userCollections = (userName) => {
+  console.log('user: ',userName)
   return (dispatch) => {
     uAxios
       .get(`/users/${userName}/collections`)
       .then((res) => {
-        //console.log('Lphoto', res.data)
+        console.log('ucollections: ', res)
         let fetchData = [...res.data]
           dispatch(userCollectionsSuccess(fetchData))
       })

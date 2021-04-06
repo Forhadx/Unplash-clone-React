@@ -20,3 +20,7 @@ export {
     searchUser,
     searchCollections 
 } from "./Search";
+
+export {
+  fetchCollectionPhotos
+} from './Collections';

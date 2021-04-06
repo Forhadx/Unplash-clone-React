@@ -13,12 +13,14 @@ import topicsReducer from './store/reducers/Topics';
 import paginationReducer from './store/reducers/Pagination';
 import userReducer from './store/reducers/User';
 import searchReducer from './store/reducers/Search';
+import collectionsReducer from './store/reducers/Collections';
 
 const rootReducer = combineReducers({
   topics: topicsReducer,
   pagination: paginationReducer,
   user: userReducer,
-  search: searchReducer
+  search: searchReducer,
+  collections: collectionsReducer
 });
 
 const logger = (store) => {

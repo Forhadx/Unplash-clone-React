@@ -3,7 +3,6 @@
   column-gap: 1.5rem;
   margin: auto;
   width: 70%;
-  
   padding-top: 2rem;
 }
 
@@ -47,5 +46,23 @@
   color: rgb(207, 207, 207);
 }
 .down {
-  color: white;
+  font-size: 1.5rem;
+  background-color: white;
+  padding: 0.2rem;
+  border-radius: 0.2rem;
+}
+
+.modalImgDetails {
+  
+}
+.modalUserDetails {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 7vh;
+}
+.modalImg{
+  max-height: 80vh;
+  max-width: 100%;
+  padding-bottom: 5vh;
 }

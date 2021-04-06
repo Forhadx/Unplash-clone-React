@@ -8,11 +8,11 @@ const Collections = (props) => {
     <div className="collections">
       {props.collections.map((c) => (
         <Link to={'/collections/'+c.id} key={c.id} className="collection-details">
-          <img src={c.urls.regular} />
+          <img src={c.cover_photo.urls.regular} />
           <h3>{c.title}</h3>
           <div className="tags">
             {c.tags.map((t) => (
-              <span key={t.id} className="tag-name">
+              <span key={t.title} className="tag-name">
                 {t.title}
               </span>
             ))}

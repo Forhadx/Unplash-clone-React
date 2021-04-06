@@ -2,15 +2,15 @@ import React, { useEffect } from "react";
 import { connect } from "react-redux";
 import * as actions from "../store/actions/index";
 
-import Gallary from '../components/gallary/gallary';
-import './style.css';
+import Gallary from "../components/gallary/gallary";
+import Spinner from "../components/UI/Spinner/Spinner";
+import "./style.css";
 
 const Topic = (props) => {
-
- // console.log(props.match.params.slug);
+  // console.log(props.match.params.slug);
 
   let slug_name = props.match.params.slug;
-  const { onFetchSingleTopics,onFetchSingleTopicsPhotos } = props;
+  const { onFetchSingleTopics, onFetchSingleTopicsPhotos } = props;
 
   useEffect(() => {
     onFetchSingleTopics(slug_name);
@@ -26,7 +26,11 @@ const Topic = (props) => {
           <p>{props.singleTopic.description}</p>
         </div>
       ) : null}
-      <Gallary photos={props.singleTopicPhotos} />
+      {props.stpLoading ? (
+        <Spinner />
+      ) : (
+        <Gallary photos={props.singleTopicPhotos} />
+      )}
     </div>
   );
 };
@@ -34,14 +38,16 @@ const Topic = (props) => {
 const mapStateToProps = (state) => {
   return {
     singleTopic: state.topics.singleTopic,
-    singleTopicPhotos: state.topics.singleTopicPhotos
+    singleTopicPhotos: state.topics.singleTopicPhotos,
+    stpLoading: state.topics.stpLoading,
   };
 };
 
 const mapDispatchToProps = (dispatch) => {
   return {
     onFetchSingleTopics: (slug) => dispatch(actions.fetchSingleTopics(slug)),
-    onFetchSingleTopicsPhotos: (slug) => dispatch(actions.fetchSingleTopicsPhotos(slug)),
+    onFetchSingleTopicsPhotos: (slug) =>
+      dispatch(actions.fetchSingleTopicsPhotos(slug)),
   };
 };
 

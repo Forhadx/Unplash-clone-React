@@ -1,6 +1,12 @@
 import * as actionsTypes from "./actionTypes";
 import uAxios from "../API/unplashApi";
 
+export const fetchAllTopicsInit = () => {
+  return {
+    type: actionsTypes.FETCH_ALL_TOPICS_START
+  };
+};
+
 export const fetchAllTopicsSuccess = (data) => {
   return {
     type: actionsTypes.FETCH_ALL_TOPICS,
@@ -10,6 +16,7 @@ export const fetchAllTopicsSuccess = (data) => {
 
 export const fetchAllTopics = () => {
   return (dispatch) => {
+    dispatch(fetchAllTopicsInit());
     uAxios
         .get("/topics")
         .then((res) => {
@@ -19,6 +26,7 @@ export const fetchAllTopics = () => {
         });
   };
 };
+
 
 
 export const fetchSingleTopicsSuccess = (data) => {
@@ -40,6 +48,13 @@ export const fetchSingleTopics = (slug) => {
 };
 
 
+
+export const fetchSingleTopicsPhotosInit = () => {
+  return {
+    type: actionsTypes.FETCH_SINGLE_TOPICS_PHOTOS_START
+  };
+};
+
 export const fetchSingleTopicsPhotosSuccess = (data) => {
   return {
     type: actionsTypes.FETCH_SINGLE_TOPICS_PHOTOS,
@@ -49,6 +64,7 @@ export const fetchSingleTopicsPhotosSuccess = (data) => {
 
 export const fetchSingleTopicsPhotos = (slug) => {
   return (dispatch) => {
+    dispatch(fetchSingleTopicsPhotosInit());
     uAxios
         .get(`/topics/${slug}/photos`)
         .then((res) => {

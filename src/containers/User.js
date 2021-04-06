@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { NavLink, Route, Switch, useParams } from "react-router-dom";
 
 import Gallary from "../components/gallary/gallary";
-import Collections from "../components/Collection/Collections";
+import UserCollections from "../components/Collection/Collection";
 
 import './style.css';
 
@@ -62,7 +62,7 @@ const User = (props) => {
             <Route
               path={`/${user}/collection`}
               exact
-              render={() => <Collections collect={props.uCollections} />}
+              render={() => <UserCollections collections={props.uCollections} />}
             />
             <Route
               path={"/" + user}

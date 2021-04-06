@@ -1,0 +1,61 @@
+.users {
+  margin: auto;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.single-user {
+  border: 1px solid rgb(212, 209, 209);
+  width: 25%;
+  min-width: 20rem;
+  height: 12rem;
+  margin-right: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: .2rem;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: row;
+  
+}
+.user-info img {
+  width: 7rem;
+  border-radius: 50%;
+}
+.user-names {
+  color: black;
+  margin-left: 1rem;
+  text-align: left;
+}
+
+.user-names p {
+  color: gray;
+  padding: 0;
+}
+
+.view-user {
+  border: 1px solid rgb(212, 209, 209);
+  background-color: white;
+  color: gray;
+  width: 100%;
+  font-size: 1rem;
+  padding: .2rem ;
+  border-radius: .2rem;
+}
+
+.view-user:focus{
+  outline: none;
+}
+
+.single-user:hover,
+.view-user:hover{
+  border-color: rgb(124, 123, 123);
+}
