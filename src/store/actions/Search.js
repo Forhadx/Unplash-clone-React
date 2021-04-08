@@ -13,7 +13,6 @@ export const searchPhotos = (val) => {
     uAxios
         .get('/search/photos?page=1&query=' + val)
         .then((res) => {
-            //console.log('search p: ',res.data.results);
             let fetchData = [...res.data.results]
             dispatch(searchPhotosSuccess(fetchData))
         });
@@ -32,7 +31,6 @@ export const searchUser = (val) => {
     uAxios
         .get('/search/users?page=1&query=' + val)
         .then((res) => {
-           // console.log('search u: ',res.data.results);
             let fetchData = [...res.data.results]
             dispatch(searchUserSuccess(fetchData))
         });
@@ -51,7 +49,6 @@ export const searchCollections = (val) => {
     uAxios
         .get('/search/collections?page=1&query=' + val)
         .then((res) => {
-            //console.log('search c: ',res.data.results);
             let fetchData = [...res.data.results]
             dispatch(searchCollectionsSuccess(fetchData))
         });

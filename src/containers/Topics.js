@@ -6,7 +6,7 @@ import Gallary from "../components/gallary/gallary";
 import Spinner from "../components/UI/Spinner/Spinner";
 import "./style.css";
 
-const Topic = (props) => {
+const Topic = React.memo(props => {
   // console.log(props.match.params.slug);
 
   let slug_name = props.match.params.slug;
@@ -17,7 +17,6 @@ const Topic = (props) => {
     onFetchSingleTopicsPhotos(slug_name);
   }, [onFetchSingleTopics, onFetchSingleTopicsPhotos, slug_name]);
 
-  //console.log("single: ", props.singleTopicPhotos);
   return (
     <div>
       {props.singleTopic ? (
@@ -33,7 +32,7 @@ const Topic = (props) => {
       )}
     </div>
   );
-};
+});
 
 const mapStateToProps = (state) => {
   return {

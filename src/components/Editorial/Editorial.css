@@ -9,9 +9,11 @@
     padding: 0;
 }
 .editorial{
+    display: none;
     color: gray;
 }
 .editorial-border{
+    display: none;
     font-size: 1.5rem;
     color: gray;
 }
@@ -59,4 +61,14 @@
 
 .sign-btn:hover{
     color: black;
+}
+
+@media (min-width: 40rem) {
+    .editorial{
+        display: block;
+    }
+    .editorial-border{
+        display: block;
+    }
+    
 }

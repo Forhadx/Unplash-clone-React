@@ -21,7 +21,6 @@ export const fetchPaginationPhotos = (val) => {
     uAxios
         .get("/photos?page=" + val)
         .then((res) => {
-            //console.log(res.data);
             let fetchData = [...res.data]
             dispatch(fetchPaginationPhotosSuccess(fetchData))
         })

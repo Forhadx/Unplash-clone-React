@@ -20,7 +20,6 @@ export const fetchAllTopics = () => {
     uAxios
         .get("/topics")
         .then((res) => {
-            //console.log(res.data);
             let fetchData = [...res.data]
             dispatch(fetchAllTopicsSuccess(fetchData))
         });
@@ -41,7 +40,6 @@ export const fetchSingleTopics = (slug) => {
     uAxios
         .get("/topics/" + slug)
         .then((res) => {
-            //console.log(res.data);
             dispatch(fetchSingleTopicsSuccess(res.data))
         });
   };
@@ -68,7 +66,6 @@ export const fetchSingleTopicsPhotos = (slug) => {
     uAxios
         .get(`/topics/${slug}/photos`)
         .then((res) => {
-            //console.log(res.data);
             let fetchData = [...res.data]
             dispatch(fetchSingleTopicsPhotosSuccess(fetchData))
         });

@@ -8,3 +8,12 @@
     background-color: rgba(0, 0, 0, 0.623);
     overflow: auto;
 }
+
+.close-btn{
+    position: fixed;
+    top: 1;
+    left: .5rem;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+}

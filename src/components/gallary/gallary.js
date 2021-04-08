@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { GrDownload } from "react-icons/gr";
 
@@ -7,23 +7,95 @@ import Modal from "../UI/Modal/Modal";
 import classes from "./gallary.module.css";
 
 const Gallary = (props) => {
-  console.log(props.photos);
+  const [modalImage, setModalImage] = useState({
+    id: "",
+    alt_description: "",
+    user: {
+      name: "",
+      username: "",
+      profile_image: {
+        large: "",
+      },
+    },
+    urls: {
+      regular: "",
+    },
+  });
+
+  const [clk, setClk] = useState(false);
+
+  const imageClickHandler = (p) => {
+    setModalImage({
+      id: p.id,
+      alt_description: p.alt_description,
+      user: {
+        name: p.user.name,
+        username: p.user.username,
+        profile_image: {
+          large: p.user.profile_image.large,
+        },
+      },
+      urls: {
+        regular: p.urls.regular,
+      },
+    });
+    document.body.style.overflow = "hidden";
+    setClk(true);
+  };
+  console.log("pp: ", modalImage);
+
+  const modalClosedHandler = () => {
+    setModalImage({
+      id: "",
+      alt_description: "",
+      user: {
+        name: "",
+        username: "",
+        profile_image: {
+          large: "",
+        },
+      },
+      urls: {
+        regular: "",
+      },
+    });
+    setClk(false);
+  };
+
   return (
     <div className={classes.imgGallary}>
-      <Modal show={true} modalClosed={false}>
+      <Modal show={clk} modalClosed={modalClosedHandler}>
         <div className={classes.modalImgDetails}>
           <div className={classes.modalUserDetails}>
-            <div>
-              hi
+            <Link
+              to={"/@" + modalImage.user.username}
+              className={classes.userInfo}
+            >
+              <img
+                src={modalImage.user.profile_image.large}
+                alt={modalImage.user.name}
+                className={classes.userImg}
+              />
+              <div className={classes.userNames}>
+                <h4>{modalImage.user.username}</h4>
+                <p className={classes.userName}>{modalImage.user.name}</p>
+              </div>
+            </Link>
+            <div className={classes.down}>
+              <GrDownload />
             </div>
-            <div>down</div>
           </div>
-          <img className={classes.modalImg} src="https://images.unsplash.com/photo-1617679121474-7dbad809be90?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=700&q=80" />
+          <img
+            className={classes.modalImg}
+            src={modalImage.urls.regular}
+            alt={modalImage.alt_description}
+          />
         </div>
       </Modal>
       {props.photos.map((p) => (
         <div key={p.id} className={classes.pictureCard}>
           <img
+            onClick={() => imageClickHandler({ ...p })}
             src={p.urls.regular}
             alt={p.alt_description}
             className={classes.picture}

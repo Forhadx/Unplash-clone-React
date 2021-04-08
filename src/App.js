@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Redirect, Route } from "react-router";
 import { Switch } from "react-router-dom";
 
@@ -7,11 +7,26 @@ import Editorial from "./components/Editorial/Editorial";
 import Navbar from "./components/Navbar/Navbar";
 
 import Home from "./containers/home";
-import Topics from "./containers/Topics";
-import AllTopics from "./containers/AllTopics";
-import User from "./containers/User";
-import Search from './containers/Search';
-import SingleCollection from './components/Collection/SingleCollection';
+
+const Topics = React.lazy(() => {
+  return import("./containers/Topics");
+});
+
+const AllTopics = React.lazy(() => {
+  return import("./containers/AllTopics");
+});
+
+const User = React.lazy(() => {
+  return import("./containers/User");
+});
+
+const Search = React.lazy(() => {
+  return import("./containers/Search");
+});
+
+const SingleCollection = React.lazy(() => {
+  return import("./components/Collection/SingleCollection");
+});
 
 const App = () => {
   return (
@@ -21,15 +36,33 @@ const App = () => {
         <Editorial />
       </header>
       <main className="App-main">
-        <Switch>
-          <Route path="/s/:type/:sName" exact component={Search} />
-          <Route path="/collections/:id" exact component={SingleCollection} />
-          <Route path="/t" exact component={AllTopics} />
-          <Route path="/t/:slug" exact component={Topics} />
-          <Route path="/:user" component={User} />
-          <Route path="/" exact component={Home} />
-          <Redirect to="/" />
-        </Switch>
+        <Suspense fallback="loading...">
+          <Switch>
+            <Route
+              path="/s/:type/:sName"
+              exact
+              render={(props) => <Search {...props} />}
+            />
+            <Route
+              path="/collections/:id"
+              exact
+              render={(props) => <SingleCollection {...props} />}
+            />
+            <Route
+              path="/t"
+              exact
+              render={(props) => <AllTopics {...props} />}
+            />
+            <Route
+              path="/t/:slug"
+              exact
+              render={(props) => <Topics {...props} />}
+            />
+            <Route path="/:user" render={(props) => <User {...props} />} />
+            <Route path="/" exact component={Home} />
+            <Redirect to="/" />
+          </Switch>
+        </Suspense>
       </main>
     </div>
   );

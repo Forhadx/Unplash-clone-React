@@ -5,10 +5,9 @@ import * as actions from "../../store/actions/index";
 
 import Gallary from '../gallary/gallary';
 
-const SingleCollection = (props) => {
+const SingleCollection = React.memo(props => {
   const { id } = useParams();
 
-  console.log(props.photos);
   const { onFetchCollectionPhotos } = props;
 
   useEffect(() => {
@@ -18,7 +17,7 @@ const SingleCollection = (props) => {
   return (
     <Gallary photos={props.photos} />
   );
-};
+});
 
 const mapStateToProps = (state) => {
   return {

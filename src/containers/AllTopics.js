@@ -7,13 +7,11 @@ import Spinner from '../components/UI/Spinner/Spinner';
 
 import "./style.css";
 
-const AllTopics = (props) => {
+const AllTopics = React.memo(props => {
   const { onFetchAllTopics } = props;
   useEffect(() => {
     onFetchAllTopics();
   }, [onFetchAllTopics]);
-
-  // console.log("view: ", props.topics);
 
   const topicList = (
     <ul>
@@ -48,7 +46,7 @@ const AllTopics = (props) => {
       </div>
     </div>
   );
-};
+});
 
 const mapStateToProps = (state) => {
   return {

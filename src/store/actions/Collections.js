@@ -13,7 +13,6 @@ export const fetchCollectionPhotos = (id) => {
     uAxios
         .get(`/collections/${id}/photos`)
         .then((res) => {
-            console.log('collections: ',res.data);
             let fetchData = [...res.data]
             dispatch(fetchCollectionPhotosSuccess(fetchData))
         });

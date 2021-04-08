@@ -13,7 +13,6 @@ export const userProfile = (userName) => {
     uAxios
       .get("/users/" + userName)
       .then((res) => {
-        //console.log("profile", res.data);
         dispatch(userProfileSuccess(res.data));
       })
       .catch((err) => {
@@ -35,7 +34,6 @@ export const userPhotos = (userName) => {
     uAxios
       .get(`/users/${userName}/photos`)
       .then((res) => {
-        //console.log('photo', res.data)
         let fetchData = [...res.data]
           dispatch(userPhotosSuccess(fetchData))
       })
@@ -57,7 +55,6 @@ export const userLikedPhotos = (userName) => {
     uAxios
       .get(`/users/${userName}/likes`)
       .then((res) => {
-        //console.log('Lphoto', res.data)
         let fetchData = [...res.data]
           dispatch(userLikedPhotosSuccess(fetchData))
       })
@@ -80,7 +77,6 @@ export const userCollections = (userName) => {
     uAxios
       .get(`/users/${userName}/collections`)
       .then((res) => {
-        console.log('ucollections: ', res)
         let fetchData = [...res.data]
           dispatch(userCollectionsSuccess(fetchData))
       })

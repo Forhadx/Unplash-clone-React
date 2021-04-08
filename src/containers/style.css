@@ -3,7 +3,7 @@
 /* All topics*/
 .all-topics{
     margin: auto;
-    width: 70%;
+    width: 90%;
     display: flex;
     flex-direction: column;
 }
@@ -30,11 +30,29 @@
     flex-wrap:wrap ;
 }
 .single-topic{
-    width: 30%;
+    width: 100%;
     height: 20rem;
     margin-bottom: 1.5rem;
     border: 1px solid rgb(219, 219, 219);
     border-radius: .4rem;
+}
+
+@media (min-width: 40rem) and (max-width: 75rem){
+    .all-topics{
+        width: 80%;
+    }
+    .single-topic{
+        width: 45%;
+    }
+}
+
+@media (min-width: 75rem) {
+    .all-topics{
+        width: 70%;
+    }
+    .single-topic{
+        width: 30%;
+    }
 }
 
 .single-topic:hover{
@@ -59,23 +77,24 @@
 /**  user   */
 
 .user{
+    margin: auto;
+    width: 90%;
     padding-top: 2rem;
-    margin-left: 30%;
-    margin-bottom: 5rem;
+    margin-bottom: 3rem;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
 }
 
 .user img{
-    width: 10rem;
+    width: 8rem;
     border-radius: 50%;
     object-fit: cover;
-    margin-right: 2rem;
+    margin-right: 1rem;
 }
 
 .user-details{
     text-align: left ;
-    width: 25rem;
+    word-wrap: break-word;
 }
 
 .user-details p{
@@ -102,4 +121,26 @@
 .user-links a.active{
     font-weight: bold;
     color: black;
+}
+
+@media (min-width: 40rem) and (max-width: 75rem){
+    .user{
+        width: 70%;
+        flex-direction: row;
+    }
+    .user img{
+        margin-right: 2rem;
+        width: 8rem;
+    }
+}
+
+@media (min-width: 75rem) {
+    .user{
+        width: 50%;
+        flex-direction: row;
+    }
+    .user img{
+        margin-right: 2rem;
+        width: 10rem;
+    }
 }

@@ -14,6 +14,7 @@
   display: inline-block;
   width: 100%;
   padding: 0.5rem 0;
+  cursor: pointer;
 }
 
 .userDetails {
@@ -50,16 +51,36 @@
   background-color: white;
   padding: 0.2rem;
   border-radius: 0.2rem;
+  cursor: pointer;
 }
 
 .modalImgDetails {
-  
+  padding: .5rem;
 }
 .modalUserDetails {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   height: 7vh;
+}
+.userInfo{
+  display: flex;
+  flex-direction: row;
+  text-decoration: none;
+}
+.userNames{
+  margin-left: 1rem;
+  text-align: left;
+}
+.userNames h4{
+  color: black;
+  margin: 0;
+
+}
+.userNames p{
+  color: gray;
+  margin: 0;
+  padding: 0;
 }
 .modalImg{
   max-height: 80vh;

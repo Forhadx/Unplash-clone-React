@@ -1,5 +1,5 @@
 .collections{
-    width: 70%;
+    width: 90%;
     margin: auto;
     display: flex;
     flex-direction: row;
@@ -8,10 +8,19 @@
 }
 
 .collection-details{
-    width: 30%;
+    width: 100%;
     height: 25rem;
     margin-bottom: 1.5rem;
     text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.collection-details h3{
+    color: black;
+    margin: 0;
+    padding: 0;
 }
 .collection-details img{
     width: 100%;
@@ -33,4 +42,24 @@
     background-color: rgb(236, 234, 234);
     border-radius: .2rem;
     margin-bottom: .5rem;
+}
+
+@media (min-width: 40rem) and (max-width: 75rem){
+    .collections{
+        width: 80%;
+    }
+    
+    .collection-details{
+        width: 40%;
+    }
+}
+
+@media (min-width: 75rem) {
+    .collections{
+        width: 70%;
+    }
+    
+    .collection-details{
+        width: 30%;
+    }
 }

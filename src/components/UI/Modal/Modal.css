@@ -1,6 +1,19 @@
-body{
-    overflow: hidden;
+
+
+.Modal {
+    position: fixed;
+    z-index: 500;
+    background-color: white;
+    width: 80%;
+    border: 1px solid #ccc;
+    box-shadow: 1px 1px 1px black;
+    padding: 16px;
+    left: 10%;
+    top: 10%;
+    box-sizing: border-box;
 }
+
+/*
 
 .Modal {
     margin: auto;
@@ -10,14 +23,26 @@ body{
     height: auto;
     z-index: 500;
     background-color: white;
-    
-    border: 1px solid black;
-    
-    
-    
+    border: 1px solid black;  
     box-sizing: border-box;
-    transition: all 0.3s ease-out;
-    
-   
-    
+    position: fixed;
 }
+
+
+.Modal {
+    margin: auto;
+    top: 2rem;
+    left: 2vw;
+    right: 2vw;
+    
+
+    height: 90vh;
+    width: 90vw;
+    
+    z-index: 500;
+    background-color: white;
+    border: 1px solid black;  
+    box-sizing: border-box;
+    position: fixed;
+}
+*/

@@ -8,7 +8,7 @@ import UserCollections from "../components/Collection/Collection";
 
 import './style.css';
 
-const User = (props) => {
+const User = React.memo(props => {
   let { user } = useParams();
   const userParam = user.slice(1);
 
@@ -31,8 +31,6 @@ const User = (props) => {
     onUserCollections,
     onUserLikedPhotos,
   ]);
-
-  console.log("noP: ", props.uCollections);
 
   return (
     <div>
@@ -62,7 +60,7 @@ const User = (props) => {
             <Route
               path={`/${user}/collection`}
               exact
-              render={() => <UserCollections collections={props.uCollections} />}
+              render={() => <UserCollections  collections={props.uCollections} />}
             />
             <Route
               path={"/" + user}
@@ -74,7 +72,7 @@ const User = (props) => {
       </div>
     </div>
   );
-};
+});
 
 const mapStateToProps = (state) => {
   return {

@@ -7,7 +7,7 @@ import { AiOutlineRight, AiOutlineLeft } from "react-icons/ai";
 
 import "./Editorial.css";
 
-const Editorial = (props) => {
+const Editorial = React.memo(props => {
   const [slide, setSlide] = useState(0);
 
   const menu = useRef(0);
@@ -46,7 +46,7 @@ const Editorial = (props) => {
                     {t.title}
                   </NavLink>
                 </li>
-              );
+              )
             }
           })}
         </ul>
@@ -61,7 +61,7 @@ const Editorial = (props) => {
       </div>
     </nav>
   );
-};
+});
 
 const mapStateToProps = (state) => {
   return {
@@ -76,15 +76,3 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Editorial);
-
-/**
- 
-{props.topics.map((t) => (
-            <li key={t.id}>
-              <NavLink exact to={`/t/${t.slug}`}>
-                {" "}
-                {t.title}{" "}
-              </NavLink>
-            </li>
-          ))}
- */
