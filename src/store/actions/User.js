@@ -72,7 +72,6 @@ export const userCollectionsSuccess = (data) => {
 };
 
 export const userCollections = (userName) => {
-  console.log('user: ',userName)
   return (dispatch) => {
     uAxios
       .get(`/users/${userName}/collections`)

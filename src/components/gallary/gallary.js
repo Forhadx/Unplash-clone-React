@@ -42,7 +42,6 @@ const Gallary = (props) => {
     document.body.style.overflow = "hidden";
     setClk(true);
   };
-  console.log("pp: ", modalImage);
 
   const modalClosedHandler = () => {
     setModalImage({
@@ -59,6 +58,7 @@ const Gallary = (props) => {
         regular: "",
       },
     });
+    document.body.style.overflow = "auto";
     setClk(false);
   };
 
@@ -68,7 +68,7 @@ const Gallary = (props) => {
         <div className={classes.modalImgDetails}>
           <div className={classes.modalUserDetails}>
             <Link
-              to={"/@" + modalImage.user.username}
+              to={"/@" + modalImage.user.username + "/photos"}
               className={classes.userInfo}
             >
               <img
@@ -101,7 +101,7 @@ const Gallary = (props) => {
             className={classes.picture}
           />
           <div className={classes.userDetails}>
-            <Link to={"/@" + p.user.username} className={classes.user}>
+            <Link to={"/@" + p.user.username + "/photos" } className={classes.user}>
               <img
                 src={p.user.profile_image.large}
                 alt={p.user.name}

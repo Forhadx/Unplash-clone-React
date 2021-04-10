@@ -40,7 +40,6 @@ const App = () => {
           <Switch>
             <Route
               path="/s/:type/:sName"
-              exact
               render={(props) => <Search {...props} />}
             />
             <Route
@@ -58,7 +57,10 @@ const App = () => {
               exact
               render={(props) => <Topics {...props} />}
             />
-            <Route path="/:user" render={(props) => <User {...props} />} />
+            <Route
+              path="/:user/:type"
+              render={(props) => <User {...props} />}
+            />
             <Route path="/" exact component={Home} />
             <Redirect to="/" />
           </Switch>
@@ -69,4 +71,3 @@ const App = () => {
 };
 
 export default App;
-

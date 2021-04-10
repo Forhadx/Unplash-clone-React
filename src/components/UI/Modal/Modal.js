@@ -10,7 +10,7 @@ const modal = (props) => {
         <div
           className="Modal"
           style={{
-            opacity: props.show ? "1" : "0",
+            display: props.show ? 'block': 'none'
           }}
         >
           {props.children}

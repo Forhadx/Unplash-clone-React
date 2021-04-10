@@ -16,7 +16,7 @@ import "./style.css";
 
 const Search = React.memo((props) => {
   let { sName } = useParams();
-
+  
   const { onSearchPhotos, onSearchUser, onSearchCollections } = props;
 
   useEffect(() => {
@@ -27,33 +27,32 @@ const Search = React.memo((props) => {
 
   return (
     <div>
+      <h1 className="search-name">{sName}</h1>
       <ul className="user-links">
         <li>
-          <NavLink to={`/s/photos/${sName}`}>Photos</NavLink>
+          <NavLink exact to={`/s/photos/${sName}`}>
+            Photos
+          </NavLink>
         </li>
         <li>
-          <NavLink to={`/s/collections/${sName}`}>Collections</NavLink>
+          <NavLink to={`/s/${"collections"}/${sName}`}>Collections</NavLink>
         </li>
         <li>
-          <NavLink to={`/s/Users/${sName}`}>Users</NavLink>
+          <NavLink to={`/s/${"Users"}/${sName}`}>Users</NavLink>
         </li>
       </ul>
       <div>
-        <h1 className="search-name">{sName}</h1>
         <Switch>
           <Route
             path={`/s/photos/${sName}`}
-            exact
             render={() => <Gallary photos={props.sPhotos} />}
           />
           <Route
-            path={`/s/collections/${sName}`}
-            exact
+            path={`/s/${"collections"}/${sName}`}
             render={() => <Collections collections={props.sCollections} />}
           />
           <Route
-            path={`/s/Users/${sName}`}
-            exact
+            path={`/s/${"Users"}/${sName}`}
             render={() => <Users users={props.sUsers} />}
           />
         </Switch>
@@ -65,7 +64,7 @@ const Search = React.memo((props) => {
 const mapStateToProps = (state) => {
   return {
     sPhotos: state.search.sPhotos,
-    sUsers: state.search.sPhotos,
+    sUsers: state.search.sUsers,
     sCollections: state.search.sCollections,
   };
 };

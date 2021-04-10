@@ -4,14 +4,15 @@
   flex-direction: row;
   justify-content: center;
   flex-wrap: wrap;
+  width: 95%;
 }
 
 .single-user {
   border: 1px solid rgb(212, 209, 209);
-  width: 25%;
-  min-width: 20rem;
+  width: 100%;
+  
   height: 12rem;
-  margin-right: 1rem;
+  
   margin-bottom: 1.5rem;
   padding: 1rem;
   text-decoration: none;
@@ -19,7 +20,9 @@
   flex-direction: column;
   justify-content: space-between;
   border-radius: .2rem;
+  box-sizing: border-box;
 }
+
 
 .user-info {
   display: flex;
@@ -34,11 +37,14 @@
   color: black;
   margin-left: 1rem;
   text-align: left;
+  
 }
 
 .user-names p {
   color: gray;
   padding: 0;
+  word-wrap: break-word;
+  
 }
 
 .view-user {
@@ -58,4 +64,34 @@
 .single-user:hover,
 .view-user:hover{
   border-color: rgb(124, 123, 123);
+}
+
+@media (min-width: 40rem) and (max-width: 75rem){
+  .users {
+    justify-content: space-between;
+  }
+  
+  .single-user {
+    width: 48%;
+  }
+
+  .user-info img {
+    width: 5rem;
+  }
+
+}
+
+@media (min-width: 75rem) {
+  .users {
+    width: 80%;
+    justify-content: space-between;
+  }
+  .single-user {
+    width: 30%;
+    
+  }
+
+  .user-info img {
+    width: 5rem;
+  }
 }

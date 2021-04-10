@@ -11,7 +11,6 @@ import './style.css';
 const User = React.memo(props => {
   let { user } = useParams();
   const userParam = user.slice(1);
-
   const {
     onUserProfile,
     onUserPhotos,
@@ -45,7 +44,7 @@ const User = React.memo(props => {
       ) : null}
       <div>
         <ul className="user-links">
-          <li><NavLink exact to={"/" + user}>Photos</NavLink></li>
+          <li><NavLink exact to={`/${user}/photos`}>Photos</NavLink></li>
           <li><NavLink to={`/${user}/likes`}>Likes</NavLink></li>
           <li><NavLink to={`/${user}/collection`}>Collections</NavLink></li>
         </ul>
@@ -63,7 +62,7 @@ const User = React.memo(props => {
               render={() => <UserCollections  collections={props.uCollections} />}
             />
             <Route
-              path={"/" + user}
+              path={`/${user}/photos`}
               exact
               render={() => <Gallary photos={props.uPhotos} />}
             />

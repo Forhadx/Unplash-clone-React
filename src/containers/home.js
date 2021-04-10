@@ -5,7 +5,7 @@ import Gallary from "../components/gallary/gallary";
 import { connect } from "react-redux";
 import Spinner from "../components/UI/Spinner/Spinner";
 
-const Home = React.memo(props => {
+const Home = React.memo((props) => {
   const { onFetchPaginationPhotos } = props;
   useEffect(() => {
     onFetchPaginationPhotos();
@@ -21,7 +21,8 @@ const Home = React.memo(props => {
           alt="cover pic"
         />
       </div>
-      { props.pLoading ? <Spinner /> : <Gallary photos={props.photos} />}
+
+      {props.pLoading ? <Spinner /> : <Gallary photos={props.photos} />}
     </div>
   );
 });
