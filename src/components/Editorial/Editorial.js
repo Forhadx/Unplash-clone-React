@@ -7,7 +7,7 @@ import { AiOutlineRight, AiOutlineLeft } from "react-icons/ai";
 
 import "./Editorial.css";
 
-const Editorial = React.memo(props => {
+const Editorial = React.memo((props) => {
   const [slide, setSlide] = useState(0);
 
   const menu = useRef(0);
@@ -38,17 +38,15 @@ const Editorial = React.memo(props => {
           <AiOutlineLeft size="1.5rem" />
         </button>
         <ul ref={menu} className="editorial-items">
-          {props.topics.map((t, i) => {
-            if (i >= slide) {
-              return (
-                <li key={t.id}>
-                  <NavLink exact to={`/t/${t.slug}`}>
-                    {t.title}
-                  </NavLink>
-                </li>
-              )
-            }
-          })}
+          {props.topics.map((t, i) =>
+            i >= slide ? (
+              <li key={t.id}>
+                <NavLink exact to={`/t/${t.slug}`}>
+                  {t.title}
+                </NavLink>
+              </li>
+            ) : null
+          )}
         </ul>
         <button onClick={rightHandler} className="sign-btn">
           <AiOutlineRight size="1.5rem" />
@@ -76,3 +74,19 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Editorial);
+
+/*
+
+{props.topics.map((t, i) => {
+            if (i >= slide) {
+              return (
+                <li key={t.id}>
+                  <NavLink exact to={`/t/${t.slug}`}>
+                    {t.title}
+                  </NavLink>
+                </li>
+              )
+            }
+          })}
+
+*/
