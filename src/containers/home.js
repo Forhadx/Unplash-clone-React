@@ -3,7 +3,6 @@ import * as actions from "../store/actions/index";
 
 import Gallary from "../components/gallary/gallary";
 import { connect } from "react-redux";
-import Spinner from "../components/UI/Spinner/Spinner";
 
 import './style.css';
 
