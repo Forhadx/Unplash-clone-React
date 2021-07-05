@@ -1,148 +1,171 @@
+.cover-pic {
+  height: 70vh;
+  width: 100%;
+  background-repeat: no-repeat;
+  object-fit: cover;
+}
 
+.topicHeader {
+  width: 40rem;
+  margin: auto;
+}
 
 /* All topics*/
-.all-topics{
-    margin: auto;
-    width: 90%;
-    display: flex;
-    flex-direction: column;
+.all-topics {
+  margin: auto;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
 }
 
-.topic-head{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    margin-bottom: 3rem;
+.topic-head {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 3rem;
 }
 
-.all-topics-details{
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+.all-topics-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
-.all-topics-details ul{
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    flex-wrap:wrap ;
-}
-.single-topic{
-    width: 100%;
-    height: 20rem;
-    margin-bottom: 1.5rem;
-    border: 1px solid rgb(219, 219, 219);
-    border-radius: .4rem;
+.all-topics-details ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-@media (min-width: 40rem) and (max-width: 75rem){
-    .all-topics{
-        width: 80%;
-    }
-    .single-topic{
-        width: 45%;
-    }
+.single-topic {
+  width: 100%;
+  height: 20rem;
+  margin-bottom: 1.5rem;
+  border: 1px solid rgb(219, 219, 219);
+  border-radius: 0.4rem;
+}
+
+@media (min-width: 40rem) and (max-width: 75rem) {
+  .all-topics {
+    width: 80%;
+  }
+  .single-topic {
+    width: 45%;
+  }
 }
 
 @media (min-width: 75rem) {
-    .all-topics{
-        width: 70%;
-    }
-    .single-topic{
-        width: 30%;
-    }
+  .all-topics {
+    width: 70%;
+  }
+  .single-topic {
+    width: 30%;
+  }
 }
 
-.single-topic:hover{
-    border: 1px solid rgb(185, 183, 183);
+.single-topic:hover {
+  border: 1px solid rgb(185, 183, 183);
 }
 
-.single-topic img{
-    height: 40%;
-    object-fit: cover;
+.single-topic img {
+  height: 40%;
+  object-fit: cover;
 }
-.single-topic a{
-    text-decoration: none;
-    text-align: left;
-    color: black;
-}
-
-.single-topic h4, p{
-    padding: 0 1rem;
+.single-topic a {
+  text-decoration: none;
+  text-align: left;
+  color: black;
 }
 
+.single-topic h4,
+p {
+  padding: 0 1rem;
+}
 
 /**  user   */
 
-.user{
-    margin: auto;
-    width: 90%;
-    padding-top: 2rem;
-    margin-bottom: 3rem;
-    display: flex;
-    flex-direction: column;
+.user {
+  margin: auto;
+  width: 90%;
+  padding-top: 2rem;
+  margin-bottom: 3rem;
+  display: flex;
+  flex-direction: column;
 }
 
-.user img{
-    width: 8rem;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 1rem;
+.user img {
+  width: 8rem;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1rem;
 }
 
-.user-details{
-    text-align: left ;
-    word-wrap: break-word;
+.user-details {
+  text-align: left;
+  word-wrap: break-word;
 }
 
-.user-details p{
-    padding: 0;
+.user-details p {
+  padding: 0;
 }
 
-.user-links{
-    display: flex;
-    flex-direction: row;
-    list-style-type: none;
-    border-bottom: 1px solid rgb(168, 166, 166);
+.user-links {
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  border-bottom: 1px solid rgb(168, 166, 166);
 }
-.user-links li{
-    padding-bottom: 1rem;
-    height: 100%;
-    cursor: pointer;
+.user-links li {
+  padding-bottom: 1rem;
+  height: 100%;
+  cursor: pointer;
 }
-.user-links a{
-    text-decoration: none;
-    color: gray;
-    margin-right: 2rem;
-    height: 100%;
+.user-links a {
+  text-decoration: none;
+  color: gray;
+  margin-right: 2rem;
+  height: 100%;
 }
 
 .user-links a:hover,
-.user-links a.active{
-    font-weight: bold;
-    color: black;
+.user-links a.active {
+  font-weight: bold;
+  color: black;
 }
 
-@media (min-width: 40rem) and (max-width: 75rem){
-    .user{
-        width: 70%;
-        flex-direction: row;
-    }
-    .user img{
-        margin-right: 2rem;
-        width: 8rem;
-    }
+@media (min-width: 40rem) and (max-width: 75rem) {
+  .user {
+    width: 70%;
+    flex-direction: row;
+  }
+  .user img {
+    margin-right: 2rem;
+    width: 8rem;
+  }
 }
 
 @media (min-width: 75rem) {
-    .user{
-        width: 50%;
-        flex-direction: row;
-    }
-    .user img{
-        margin-right: 2rem;
-        width: 10rem;
-    }
+  .user {
+    width: 50%;
+    flex-direction: row;
+  }
+  .user img {
+    margin-right: 2rem;
+    width: 10rem;
+  }
+}
+
+
+.load{
+  outline: none;
+  border: none;
+  background-color: rgb(230, 230, 230);
+  color: grey;
+  padding: .5rem 1rem;
+  margin: 1rem 0;
+  border-radius: .5rem;
+  cursor: pointer;
 }

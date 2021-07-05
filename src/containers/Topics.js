@@ -20,7 +20,7 @@ const Topic = React.memo(props => {
   return (
     <div>
       {props.singleTopic ? (
-        <div>
+        <div className="topicHeader">
           <h1>{props.singleTopic.title}</h1>
           <p>{props.singleTopic.description}</p>
         </div>
