@@ -2,4 +2,4 @@
 
 project link
 
-https://sad-wiles-f6c5c2.netlify.app
+https://unplash-clone-fx.netlify.app/
